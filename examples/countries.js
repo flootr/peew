@@ -1,5 +1,7 @@
 "use strict";
 
+// The countries.xml file is copied from https://docs.python.org/3.4/library/xml.etree.elementtree.html.
+
 var fs = require('fs');
 var path = require('path');
 
