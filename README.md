@@ -1,6 +1,8 @@
 # saml
 parses xml using [sax.js](https://github.com/isaacs/sax-js).
 
+Call it like `[ˈzɛml̩]`. Do not mix up with 'Semmel'.
+
 **Note:** This project is under active development. Consider that there will be **breaking** changes on the API until a release of 1.0.0.
 
 ## API
