@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<d:multistatus xmlns:d="DAV:" xmlns:s="http://sabredav.org/ns" xmlns:cal="urn:ietf:params:xml:ns:caldav" xmlns:cs="http://calendarserver.org/ns/"><d:response><d:href>/cal.php/calendars/markus/standard/AE1882FC-E25C-43E7-B398-CAAAB9242AF0.ics</d:href><d:propstat><d:prop><cal:calendar-data>BEGIN:VCALENDAR
+<d:multistatus xmlns:d="DAV:" xmlns:s="http://sabredav.org/ns" xmlns:cal="urn:ietf:params:xml:ns:caldav" xmlns:cs="http://calendarserver.org/ns/"><d:response><d:href>/calendars/user/calendar/calendar.ics</d:href><d:propstat><d:prop><cal:calendar-data>BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//Apple Inc.//Mac OS X 10.10.3//EN
 CALSCALE:GREGORIAN
@@ -26,7 +26,7 @@ UID:AE1882FC-E25C-43E7-B398-CAAAB9242AF0
 RRULE:FREQ=DAILY;INTERVAL=1;COUNT=3
 DTEND;TZID=Europe/Berlin:20150515T100000
 TRANSP:OPAQUE
-SUMMARY:Markus
+SUMMARY:HolySummaryConsideredAsTitle
 DTSTART;TZID=Europe/Berlin:20150515T090000
 DTSTAMP:20150517T202941Z
 SEQUENCE:0
@@ -36,7 +36,7 @@ CREATED:20150517T202941Z
 UID:AE1882FC-E25C-43E7-B398-CAAAB9242AF0
 DTEND;TZID=Europe/Berlin:20150517T100000
 TRANSP:OPAQUE
-SUMMARY:Markus Bald
+SUMMARY:AnotherFeature
 DTSTART;TZID=Europe/Berlin:20150517T090000
 DTSTAMP:20150517T202941Z
 SEQUENCE:0
