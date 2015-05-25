@@ -1,0 +1,23 @@
+{
+  "name": "saml",
+  "version": "0.0.1",
+  "description": "parses xml using sax.js",
+  "keywords": [
+    "xml",
+    "parser",
+    "sax",
+    "json"
+  ],
+  "bugs": {
+    "url": "https://github.com/flootr/saml/issues"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Markus Dobmann <markus.dobmann@peerigon.com>",
+  "license": "MIT",
+  "dependencies": {
+    "sax": "^1.1.1"
+  }
+}
