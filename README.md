@@ -25,15 +25,15 @@ xmlParser.parse('some xml')
 
 ### Element
 
-Any xml object is transformed into a so-called 'Element'. This class holds a JavaScript Object which contain a name, attributes, children and so on. After using the parser you will get an Object which is an instance of Element.
+Any xml object is transformed into a so-called 'Element'. This class holds a JavaScript Objects which contain a name, attributes, children and so on. After using the parser you will get an Object which is an instance of Element.
 
 The Element class provides you some useful methods that help you find children, iterate over children and so on.
 
-**Note:** You can use this class to build an xml-like structure using JS object but you will not be able to transform it to pure XML as this is not supported yet (but is considered as *nice to have* feature and will be supported in the future).
+**Note:** You can use this class to build an xml-like structure using JS objects but you will not be able to transform it to pure XML as this is not supported yet (but is considered as *nice to have* feature and will be supported in the future).
 
 #### Element.root()
 
-Returns the root of the current Element.
+Returns the root of the Element tree.
 
 #### Element.up()
 
@@ -45,7 +45,7 @@ Use an object to set attributes on the current Element.
 
 #### Element.addChildNode(Element)
 
-Adds the given Element to the children of the current Element. **Note:**T his returns the child, not the current Element!
+Adds the given Element to the children of the current Element. **Note:** This returns the added child, not the current Element!
 
 #### Element.setText(String)
 
@@ -63,7 +63,7 @@ Sets the given string as text node to the current element.
 
 Returns a generator which makes it possible to iterate recursively over the whole tree.
 
-**Important notice:** This feature is implemented already but commented out until node supports generators without a `--harmony` flag.
+**Important notice:** This feature is implemented already but commented out until node.js supports generators without a `--harmony` flag.
 If you want to use this feature get a copy of **saml** and remove the comment slashes yourself.
 
 #### Element.isElement()
