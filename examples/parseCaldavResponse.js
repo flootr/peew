@@ -11,5 +11,5 @@ var xmlResponse = fs.readFileSync(path.resolve(__dirname, 'caldavResponse.xml'),
 
 xmlParser.parse(xmlResponse)
     .then(function (res) {
-        console.log(inspect(res));
+        console.log(inspect(res, {depth: null, colors: true}));
     });
