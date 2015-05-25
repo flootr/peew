@@ -43,6 +43,10 @@ Returns the root of the Element tree.
 
 Returns the parent Element of the current Element.
 
+#### Element.get(key)
+
+Returns the Elements attribute named *key*.
+
 #### Element.setAttributes(Object)
 
 Use an object to set attributes on the current Element.
