@@ -76,7 +76,7 @@ If you want to use this feature get a copy of **saml** and remove the comment sl
 
 #### Element.treeFind(match)
 
-`treeFind()` returns any occurrence of `name === 'match'` on the whole tree, starting from the current Element.
+`treeFind()` returns any occurrence of `Element.name === 'match'` on the whole tree, starting from the current Element.
 
 #### Element.isElement()
 
