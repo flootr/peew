@@ -5,7 +5,7 @@ Call it like `[ˈzɛml̩]`. Do not mix up with 'Semmel'.
 
 [![Build Status](https://travis-ci.org/flootr/saml.svg?branch=master)](https://travis-ci.org/flootr/saml) [![Dependency Status](https://david-dm.org/flootr/saml.svg)](https://david-dm.org/flootr/saml) [![devDependency Status](https://david-dm.org/flootr/saml/dev-status.svg)](https://david-dm.org/flootr/saml#info=devDependencies)
 
-**Note:** This project is under active development. Consider that there will be **breaking** changes on the API until a release of 1.0.0.
+**Note:** This project is under active development. API may change.
 
 ## API
 
