@@ -74,6 +74,10 @@ Returns a generator which makes it possible to iterate recursively over the whol
 **Important notice:** This feature is implemented already but commented out until node.js supports generators without a `--harmony` flag.
 If you want to use this feature get a copy of **saml** and remove the comment slashes yourself.
 
+#### Element.treeFind(match)
+
+`treeFind()` returns any occurrence of `name === 'match'` on the whole tree, starting from the current Element.
+
 #### Element.isElement()
 
 Returns true if Element is really an instance of Element.
