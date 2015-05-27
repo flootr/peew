@@ -5,7 +5,7 @@ Call it like `[ˈzɛml̩]`. Do not mix up with 'Semmel'.
 
 [![Build Status](https://travis-ci.org/flootr/saml.svg?branch=master)](https://travis-ci.org/flootr/saml) [![Dependency Status](https://david-dm.org/flootr/saml.svg)](https://david-dm.org/flootr/saml) [![devDependency Status](https://david-dm.org/flootr/saml/dev-status.svg)](https://david-dm.org/flootr/saml#info=devDependencies)
 
-**Note:** This project is under active development. Consider that there will be **breaking** changes on the API until a release of 1.0.0.
+**Note:** This project is under active development. API may change.
 
 ## API
 
@@ -73,6 +73,10 @@ Returns a generator which makes it possible to iterate recursively over the whol
 
 **Important notice:** This feature is implemented already but commented out until node.js supports generators without a `--harmony` flag.
 If you want to use this feature get a copy of **saml** and remove the comment slashes yourself.
+
+#### Element.treeFind(match)
+
+`treeFind()` returns any occurrence of `Element.name === 'match'` on the whole tree, starting from the current Element.
 
 #### Element.isElement()
 

@@ -72,4 +72,15 @@ describe('Element', function () {
             });
         });
     });
+
+    describe('treeFind()', function () {
+        it('should return the proper Elements', function () {
+            newElement.addChildNode(new Element('beautifulSubNode', {}));
+            newElement.find('beautifulSubNode').addChildNode(new Element('beautifulSubSubNode', {}));
+            var results = newElement.treeFind('beautifulSubSubNode');
+            expect(results).to.be.instanceof(Array);
+            expect(results).to.have.length(1);
+            expect(results[0].name).to.eql('beautifulSubSubNode');
+        });
+    });
 });
