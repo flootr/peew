@@ -9,11 +9,11 @@
     "json"
   ],
   "bugs": {
-    "url": "https://github.com/flootr/saml/issues"
+    "url": "https://github.com/flootr/peew/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/flootr/saml.git"
+    "url": "https://github.com/flootr/peew.git"
   },
   "main": "lib/index.js",
   "scripts": {
