@@ -1,9 +1,7 @@
-# saml
+# peew
 parses xml using [sax.js](https://github.com/isaacs/sax-js).
 
-Call it like `[ˈzɛml̩]`. Do not mix up with 'Semmel'.
-
-[![Build Status](https://travis-ci.org/flootr/saml.svg?branch=master)](https://travis-ci.org/flootr/saml) [![Dependency Status](https://david-dm.org/flootr/saml.svg)](https://david-dm.org/flootr/saml) [![devDependency Status](https://david-dm.org/flootr/saml/dev-status.svg)](https://david-dm.org/flootr/saml#info=devDependencies)
+[![Build Status](https://travis-ci.org/flootr/peew.svg?branch=master)](https://travis-ci.org/flootr/peew) [![Dependency Status](https://david-dm.org/flootr/peew.svg)](https://david-dm.org/flootr/peew) [![devDependency Status](https://david-dm.org/flootr/peew/dev-status.svg)](https://david-dm.org/flootr/peew#info=devDependencies)
 
 **Note:** This project is under active development. API may change.
 
@@ -14,7 +12,7 @@ Call it like `[ˈzɛml̩]`. Do not mix up with 'Semmel'.
 This is the parser which can be used to parse xml into proper Javascript object. Initialize the parser like so:
 
 ```javascript
-var Parser = require('saml').Parser();
+var Parser = require('peew').Parser();
 var xmlParser = new Parser()
 ```
 
@@ -72,7 +70,7 @@ Sets the given string as text node to the current element.
 Returns a generator which makes it possible to iterate recursively over the whole tree.
 
 **Important notice:** This feature is implemented already but commented out until node.js supports generators without a `--harmony` flag.
-If you want to use this feature get a copy of **saml** and remove the comment slashes yourself.
+If you want to use this feature get a copy of **peew** and remove the comment slashes yourself.
 
 #### Element.treeFind(match)
 
