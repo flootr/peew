@@ -83,4 +83,15 @@ describe('Element', function () {
             expect(results[0].name).to.eql('beautifulSubSubNode');
         });
     });
+
+    describe('keys()', function () {
+        it('should return the elements attribute names', function () {
+            var attributes = {
+                values: 3,
+                wow: 'hammer'
+            };
+            newElement.setAttributes(attributes);
+            expect(newElement.keys()).to.eql(Object.keys(attributes));
+        });
+    });
 });

@@ -45,6 +45,10 @@ Returns the parent Element of the current Element.
 
 Returns the Elements attribute named *key*.
 
+#### Element.keys()
+
+Returns the Elements attribute names.
+
 #### Element.setAttributes(Object)
 
 Use an object to set attributes on the current Element.
