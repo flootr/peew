@@ -55,7 +55,7 @@ Adds the given Element to the children of the current Element. **Note:** This re
 
 #### Element.setText(String)
 
-Sets the given string as text node to the current element.
+Sets Element.text to the text which occur before the first subelement.
 
 #### Element.find(match)
 
