@@ -1,8 +1,6 @@
 # peew
 parses xml using [sax.js](https://github.com/isaacs/sax-js).
 
-Call it like `[ˈzɛml̩]`. Do not mix up with 'Semmel'.
-
 [![Build Status](https://travis-ci.org/flootr/peew.svg?branch=master)](https://travis-ci.org/flootr/peew) [![Dependency Status](https://david-dm.org/flootr/peew.svg)](https://david-dm.org/flootr/peew) [![devDependency Status](https://david-dm.org/flootr/peew/dev-status.svg)](https://david-dm.org/flootr/peew#info=devDependencies)
 
 **Note:** This project is under active development. API may change.
