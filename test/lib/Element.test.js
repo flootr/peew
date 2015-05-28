@@ -94,4 +94,13 @@ describe('Element', function () {
             expect(newElement.keys()).to.eql(Object.keys(attributes));
         });
     });
+
+    describe('findText()', function () {
+        it('should return the text of the first subelement', function () {
+            var SubElement = new Element('beautifulSubElement', {});
+            SubElement.setText('wonderful');
+            newElement.addChildNode(SubElement);
+            expect(newElement.findText('beautifulSubElement')).to.eql('wonderful');
+        });
+    });
 });

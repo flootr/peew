@@ -69,6 +69,10 @@ Sets Element.text to the text which occur before the first subelement.
 
 `findAll()` finds all children wit a name matching *match*.
 
+#### Element.findText(match)
+
+'findText()' finds the text for the first direct child of the current element with name matching 'name'
+
 #### Element.iter(match)
 
 Returns a generator which makes it possible to iterate recursively over the whole tree.
