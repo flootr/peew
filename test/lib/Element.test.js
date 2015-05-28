@@ -83,4 +83,24 @@ describe('Element', function () {
             expect(results[0].name).to.eql('beautifulSubSubNode');
         });
     });
+
+    describe('keys()', function () {
+        it('should return the elements attribute names', function () {
+            var attributes = {
+                values: 3,
+                wow: 'hammer'
+            };
+            newElement.setAttributes(attributes);
+            expect(newElement.keys()).to.eql(Object.keys(attributes));
+        });
+    });
+
+    describe('findText()', function () {
+        it('should return the text of the first subelement', function () {
+            var SubElement = new Element('beautifulSubElement', {});
+            SubElement.setText('wonderful');
+            newElement.addChildNode(SubElement);
+            expect(newElement.findText('beautifulSubElement')).to.eql('wonderful');
+        });
+    });
 });

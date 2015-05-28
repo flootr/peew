@@ -45,6 +45,10 @@ Returns the parent Element of the current Element.
 
 Returns the Elements attribute named *key*.
 
+#### Element.keys()
+
+Returns the Elements attribute names.
+
 #### Element.setAttributes(Object)
 
 Use an object to set attributes on the current Element.
@@ -64,6 +68,10 @@ Sets Element.text to the text which occur before the first subelement.
 #### Element.findAll(match)
 
 `findAll()` finds all children wit a name matching *match*.
+
+#### Element.findText(match)
+
+'findText()' finds the text for the first direct child of the current element with name matching 'name'
 
 #### Element.iter(match)
 
