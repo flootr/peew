@@ -71,7 +71,7 @@ Sets Element.text to the text which occur before the first subelement.
 
 #### Element.findText(match)
 
-'findText()' finds the text for the first direct child of the current element with name matching 'name'
+`findText()` finds the text for the first direct child of the current element with name matching 'name'
 
 #### Element.iter(match)
 
