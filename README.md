@@ -16,6 +16,8 @@ var Tree = require('peew').Tree();
 var xmlTree = new Tree()
 ```
 
+The Tree holds a root element and therefore the xml hierarchy and provides methods to operate on this tree.
+
 #### Tree.parse(String)
 
 ```javascript
