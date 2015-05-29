@@ -7,27 +7,35 @@ parses xml using [sax.js](https://github.com/isaacs/sax-js).
 
 ## API
 
-### Parser
+### Tree
 
-This is the parser which can be used to parse xml into proper Javascript object. Initialize the parser like so:
+This is the Tree which can be used to parse xml into proper Javascript object. Initialize the Tree like so:
 
 ```javascript
-var Parser = require('peew').Parser();
-var xmlParser = new Parser()
+var Tree = require('peew').Tree();
+var xmlTree = new Tree()
 ```
 
-#### Parser.parse()
+#### Tree.parse(String)
 
 ```javascript
-xmlParser.parse('some xml')
+xmlTree.parse('some xml')
 	.then(function (res) {
 	// .. do something with the parsed xml
 	});
 ```
 
+#### Tree.getRoot()
+
+Return the root element of the tree.
+
+#### Tree.isElement(element)
+
+Return whether *element* is an instance of Element.
+
 ### Element
 
-Any xml object is transformed into a so-called 'Element'. This class holds a JavaScript Objects which contain a name, attributes, children and so on. After using the parser you will get an Object which is an instance of Element.
+Any xml object is transformed into a so-called 'Element'. This class holds a JavaScript Objects which contain a name, attributes, children and so on. After using the Tree you will get an Object which is an instance of Element.
 
 The Element class provides you some useful methods that help you find children, iterate over children and so on.
 
@@ -87,7 +95,3 @@ If you want to use this feature get a copy of **peew** and remove the comment sl
 #### Element.treeFindAll(match)
 
 `treeFindAll()` returns any occurrence of `Element.name === 'match'` on the whole tree, starting from the current Element.
-
-#### Element.isElement()
-
-Returns true if Element is really an instance of Element.
