@@ -82,7 +82,11 @@ If you want to use this feature get a copy of **peew** and remove the comment sl
 
 #### Element.treeFind(match)
 
-`treeFind()` returns any occurrence of `Element.name === 'match'` on the whole tree, starting from the current Element.
+`treeFind()` returns the first Element with the name matching *match*, searching on the whole tree from the current Element.
+
+#### Element.treeFindAll(match)
+
+`treeFindAll()` returns any occurrence of `Element.name === 'match'` on the whole tree, starting from the current Element.
 
 #### Element.isElement()
 

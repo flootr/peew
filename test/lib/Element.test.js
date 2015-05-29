@@ -73,11 +73,11 @@ describe('Element', function () {
         });
     });
 
-    describe('treeFind()', function () {
+    describe('treeFindAll()', function () {
         it('should return the proper Elements', function () {
             newElement.addChildNode(new Element('beautifulSubNode', {}));
             newElement.find('beautifulSubNode').addChildNode(new Element('beautifulSubSubNode', {}));
-            var results = newElement.treeFind('beautifulSubSubNode');
+            var results = newElement.treeFindAll('beautifulSubSubNode');
             expect(results).to.be.instanceof(Array);
             expect(results).to.have.length(1);
             expect(results[0].name).to.eql('beautifulSubSubNode');
@@ -101,6 +101,16 @@ describe('Element', function () {
             SubElement.setText('wonderful');
             newElement.addChildNode(SubElement);
             expect(newElement.findText('beautifulSubElement')).to.eql('wonderful');
+        });
+    });
+
+    describe('treeFind()', function () {
+        it('should return the first matching element', function () {
+            newElement.addChildNode(new Element('beautifulSubNode', {}));
+            newElement.find('beautifulSubNode').addChildNode(new Element('beautifulSubSubNode', {}));
+            var results = newElement.treeFind('beautifulSubSubNode');
+            expect(results).to.be.instanceof(Element);
+            expect(results.name).to.eql('beautifulSubSubNode');
         });
     });
 });
