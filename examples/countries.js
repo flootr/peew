@@ -18,4 +18,7 @@ xmlParser.parse(xmlString)
                 console.log('Yeah, there is Panama! Look:\n', country);
             }
         });
+    })
+    .catch(function (err) {
+        console.log(err);
     });
