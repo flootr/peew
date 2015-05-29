@@ -9,7 +9,7 @@ parses xml using [sax.js](https://github.com/isaacs/sax-js).
 
 ### Tree
 
-This is the Tree which can be used to parse xml into proper Javascript object. Initialize the Tree like so:
+This is the Tree which can be used to parse xml into proper Javascript objects. Initialize the Tree like so:
 
 ```javascript
 var Tree = require('peew').Tree();
