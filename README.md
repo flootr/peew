@@ -87,13 +87,14 @@ Sets Element.text to the text which occur before the first subelement.
 
 Returns a generator which makes it possible to iterate recursively over the whole tree.
 
-**Important notice:** This feature is implemented already but commented out until node.js supports generators without a `--harmony` flag.
-If you want to use this feature get a copy of **peew** and remove the comment slashes yourself.
-
 #### Element.treeFind(match)
+
+_Deprecated_: Use `Element.iter()`.
 
 `treeFind()` returns the first Element with the name matching *match*, searching on the whole tree from the current Element.
 
 #### Element.treeFindAll(match)
+
+_Deprecated_: Use `Element.iter()`.
 
 `treeFindAll()` returns any occurrence of `Element.name === 'match'` on the whole tree, starting from the current Element.
