@@ -12,7 +12,7 @@ parses xml using [sax.js](https://github.com/isaacs/sax-js).
 Tree can be used to parse XML. Initialize the Tree like so:
 
 ```js
-const Tree = require('peew').Tree();
+const Tree = require('peew').Tree;
 
 const config = {
     strict: true,
