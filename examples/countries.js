@@ -5,12 +5,12 @@
 var fs = require('fs');
 var path = require('path');
 
-var Parser = require('../lib').Parser;
-var xmlParser = new Parser();
+var Tree = require('../lib').Tree;
+var xmlTree = new Tree();
 
 var xmlString = fs.readFileSync(path.resolve(__dirname, 'countries.xml'), 'utf8');
 
-xmlParser.parse(xmlString)
+xmlTree.parse(xmlString)
     .then(function (res) {
         var countries = res.findAll('country');
         countries.forEach(function (country) {

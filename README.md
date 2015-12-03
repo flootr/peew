@@ -7,27 +7,37 @@ parses xml using [sax.js](https://github.com/isaacs/sax-js).
 
 ## API
 
-### Parser
+### Tree
 
-This is the parser which can be used to parse xml into proper Javascript object. Initialize the parser like so:
+This is the Tree which can be used to parse xml into proper Javascript objects. Initialize the Tree like so:
 
 ```javascript
-var Parser = require('peew').Parser();
-var xmlParser = new Parser()
+var Tree = require('peew').Tree();
+var xmlTree = new Tree()
 ```
 
-#### Parser.parse()
+The Tree holds a root element and therefore the xml hierarchy and provides methods to operate on this tree.
+
+#### Tree.parse(String)
 
 ```javascript
-xmlParser.parse('some xml')
+xmlTree.parse('some xml')
 	.then(function (res) {
 	// .. do something with the parsed xml
 	});
 ```
 
+#### Tree.getRoot()
+
+Return the root element of the tree.
+
+#### Tree.isElement(element)
+
+Return whether *element* is an instance of Element.
+
 ### Element
 
-Any xml object is transformed into a so-called 'Element'. This class holds a JavaScript Objects which contain a name, attributes, children and so on. After using the parser you will get an Object which is an instance of Element.
+Any xml object is transformed into a so-called 'Element'. This class holds a JavaScript Objects which contain a name, attributes, children and so on. After using the Tree you will get an Object which is an instance of Element.
 
 The Element class provides you some useful methods that help you find children, iterate over children and so on.
 
@@ -77,17 +87,14 @@ Sets Element.text to the text which occur before the first subelement.
 
 Returns a generator which makes it possible to iterate recursively over the whole tree.
 
-**Important notice:** This feature is implemented already but commented out until node.js supports generators without a `--harmony` flag.
-If you want to use this feature get a copy of **peew** and remove the comment slashes yourself.
-
 #### Element.treeFind(match)
+
+_Deprecated_: Use `Element.iter()`.
 
 `treeFind()` returns the first Element with the name matching *match*, searching on the whole tree from the current Element.
 
 #### Element.treeFindAll(match)
 
+_Deprecated_: Use `Element.iter()`.
+
 `treeFindAll()` returns any occurrence of `Element.name === 'match'` on the whole tree, starting from the current Element.
-
-#### Element.isElement()
-
-Returns true if Element is really an instance of Element.
