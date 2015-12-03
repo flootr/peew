@@ -1,6 +1,6 @@
 {
   "name": "peew",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "parses xml using sax.js",
   "keywords": [
     "xml",
@@ -25,9 +25,6 @@
   },
   "author": "Markus Dobmann <markus.dobmann@peerigon.com>",
   "license": "MIT",
-  "engines": {
-    "node": ">=4.2.1"
-  },
   "dependencies": {
     "sax": "^1.1.3"
   },
