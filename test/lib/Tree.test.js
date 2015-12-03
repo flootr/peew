@@ -1,77 +1,74 @@
 "use strict";
 
-var expect = require('chai').expect;
+/*eslint-disable max-nested-callbacks */
 
-var Element = require('../../lib').Element;
-var Tree = require('../../lib').Tree;
+const expect = require("unexpected");
+const Element = require("../../lib").Element;
+const Tree = require("../../lib").Tree;
 
-describe('Tree', function () {
+describe("Tree", () => {
+    let xmlTree;
 
-    var xmlTree;
-
-    beforeEach(function () {
+    beforeEach(() => {
         xmlTree = new Tree();
     });
 
-    describe('parse()', function () {
+    describe("parse()", () => {
+        it("should throw an error if an xml tag has a closed but no starting tag", () => {
+            const xmlString = "<opening></missing></opening>";
+            const promise = xmlTree.parse(xmlString);
 
-        it('should throw an error if an xml tag has a closed but no starting tag', function () {
-            var xmlString = '<opening></missing></opening>';
-            return xmlTree.parse(xmlString)
-                .catch(function (err) {
-                    expect(err).to.be.instanceof(Error);
-                });
+            return expect(promise, "to be rejected");
         });
 
-        it('should create a proper js object', function () {
-            var xmlString = '<opening src="happening"><happening></happening></opening>';
-            var expectedObject = new Element('opening', {src: 'happening'}).addChildNode(new Element('happening')).root();
+        it("should create a proper js object", () => {
+            const xmlString = "<opening src=\"happening\"></opening>";
+            const expectedObject = new Element("opening", { src: "happening" });
+            const promise = xmlTree.parse(xmlString);
 
-            return xmlTree.parse(xmlString)
-                .then(function (res) {
-                    expect(res).to.eql(expectedObject);
-                });
-
-        })
+            return expect(promise, "to be fulfilled with", expectedObject);
+        });
     });
 
-    describe('getRoot()', function () {
+    describe("getRoot()", () => {
+        it("should return the root element of the tree", () => {
+            const xmlString = "<rootie><subOne></subOne><subTwo></subTwo></rootie>";
 
-        it('should return the root element of the tree', function () {
-            var xmlString = '<rootie><subOne></subOne><subTwo></subTwo></rootie>';
             return xmlTree.parse(xmlString)
-                .then(function () {
-                    expect(xmlTree.getRoot()).to.be.instanceof(Element);
-                    expect(xmlTree.getRoot().name).to.eql('rootie');
-                    expect(xmlTree.getRoot().parent).to.eql(null);
+                .then(() => {
+                    expect(xmlTree.getRoot(), "to be an", Element);
+                    expect(xmlTree.getRoot().name, "to equal", "rootie");
+                    expect(xmlTree.getRoot().parent, "to be", null);
                 });
         });
 
-        it('should return null, if no root element exists', function () {
-            var xmlString = '';
+        it("should return null, if no root element exists", () => {
+            const xmlString = "";
+
             return xmlTree.parse(xmlString)
-                .then(function () {
-                    expect(xmlTree.getRoot()).to.eql(null);
+                .then(() => {
+                    expect(xmlTree.getRoot(), "to be", null);
                 });
         });
     });
 
-    describe('isElement(element)', function () {
-        it('should return true if element is an instance of Element', function () {
-            var xmlString = '<rootieRoot><subOne></subOne></rootieRoot>';
+    describe("isElement(element)", () => {
+        it("should return true if element is an instance of Element", () => {
+            const xmlString = "<rootieRoot><subOne></subOne></rootieRoot>";
+
             return xmlTree.parse(xmlString)
-                .then(function () {
-                    expect(xmlTree.isElement(xmlTree.getRoot())).to.be.true;
+                .then(() => {
+                    return expect(xmlTree.isElement(xmlTree.getRoot()), "to be", true);
                 });
         });
 
-        it('should return false if element is not an instance of Element', function () {
-            var xmlString = '';
+        it("should return false if element is not an instance of Element", () => {
+            const xmlString = "";
+
             return xmlTree.parse(xmlString)
-                .then(function () {
-                    expect(xmlTree.isElement(xmlTree.getRoot())).to.be.false;
+                .then(() => {
+                    return expect(xmlTree.isElement(xmlTree.getRoot()), "to be", false);
                 });
         });
     });
-
 });
