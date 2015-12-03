@@ -2,7 +2,7 @@
 
 /*eslint-disable max-nested-callbacks */
 
-const expect = require("chai").expect;
+const expect = require("unexpected");
 const Element = require("../../lib").Element;
 
 describe("Element", () => {
@@ -14,21 +14,21 @@ describe("Element", () => {
 
     describe("new Element()", () => {
         it("should throw an error if there is no given name", () => {
-            expect(() => new Element()).to.throw(Error, "Failed due to missing \"name\"");
+            expect(() => new Element(), "to throw", "Failed due to missing \"name\"");
         });
 
         it("should return an instance of Element", () => {
-            expect(newElement).to.be.instanceof(Element);
-            expect(newElement).to.contain.all.keys(["attrs", "children", "name", "parent"]);
+            expect(newElement, "to be an", Element);
+            expect(newElement, "to have keys", ["attrs", "children", "name", "parent"]);
         });
     });
 
     describe("setAttributes()", () => {
         it("should set the proper attributes", () => {
             newElement.setAttributes({ type: "PseudoObject", charset: "utf8" });
-            expect(newElement.attrs).to.contain.all.keys(["type", "charset"]);
-            expect(newElement.attrs.type).to.equal("PseudoObject");
-            expect(newElement.attrs.charset).to.equal("utf8");
+            expect(newElement.attrs, "to have keys", ["type", "charset"]);
+            expect(newElement.attrs.type, "to equal", "PseudoObject");
+            expect(newElement.attrs.charset, "to equal", "utf8");
         });
     });
 
@@ -37,8 +37,9 @@ describe("Element", () => {
             const newSubElement = new Element("beautifulNewSubElement", {});
 
             newElement.addChildNode(newSubElement);
-            expect(newElement.children).to.be.instanceof(Array);
-            expect(newSubElement.root()).to.equal(newElement);
+
+            expect(newElement.children, "to be an", Array);
+            expect(newSubElement.root(), "to equal", newElement);
         });
     });
 
@@ -47,8 +48,8 @@ describe("Element", () => {
             const newSubElement = new Element("beautifulNewSubElement", {});
 
             newElement.addChildNode(newSubElement);
-            expect(newSubElement.up()).to.equal(newElement);
-            expect(newElement.up()).to.equal(newElement);
+            expect(newSubElement.up(), "to equal", newElement);
+            expect(newElement.up(), "to equal", newElement);
         });
     });
 
@@ -64,10 +65,10 @@ describe("Element", () => {
                 newElement.addChildNode(element);
             });
 
-            expect(newElement.children).to.be.instanceof(Array);
-            expect(newElement.children).to.have.length(23);
+            expect(newElement.children, "to be an", Array);
+            expect(newElement.children, "to have length", 23);
             newElement.children.map((child) => {
-                expect(elements).to.contain(child);
+                expect(elements, "to contain", child);
             });
         });
     });
@@ -79,9 +80,9 @@ describe("Element", () => {
 
             const results = newElement.treeFindAll("beautifulSubSubNode");
 
-            expect(results).to.be.instanceof(Array);
-            expect(results).to.have.length(1);
-            expect(results[0].name).to.eql("beautifulSubSubNode");
+            expect(results, "to be an", Array);
+            expect(results, "to have length", 1);
+            expect(results[0].name, "to equal", "beautifulSubSubNode");
         });
     });
 
@@ -93,7 +94,7 @@ describe("Element", () => {
             };
 
             newElement.setAttributes(attributes);
-            expect(newElement.keys()).to.eql(Object.keys(attributes));
+            expect(newElement.keys(), "to equal", Object.keys(attributes));
         });
     });
 
@@ -103,7 +104,7 @@ describe("Element", () => {
 
             SubElement.setText("wonderful");
             newElement.addChildNode(SubElement);
-            expect(newElement.findText("beautifulSubElement")).to.eql("wonderful");
+            expect(newElement.findText("beautifulSubElement"), "to equal", "wonderful");
         });
     });
 
@@ -114,8 +115,8 @@ describe("Element", () => {
 
             const results = newElement.treeFind("beautifulSubSubNode");
 
-            expect(results).to.be.instanceof(Element);
-            expect(results.name).to.eql("beautifulSubSubNode");
+            expect(results, "to be an", Element);
+            expect(results.name, "to equal", "beautifulSubSubNode");
         });
     });
 });

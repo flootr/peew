@@ -29,9 +29,9 @@
     "sax": "^1.1.1"
   },
   "devDependencies": {
-    "chai": "^3.0.0",
     "eslint": "^1.10.3",
     "eslint-config-peerigon": "^0.1.1",
-    "mocha": "^2.2.5"
+    "mocha": "^2.2.5",
+    "unexpected": "^10.3.1"
   }
 }
