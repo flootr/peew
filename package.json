@@ -11,13 +11,17 @@
   "bugs": {
     "url": "https://github.com/flootr/peew/issues"
   },
+  "enginges": {
+    "node": ">=4.2.1"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/flootr/peew.git"
   },
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha --recursive test/*"
+    "test": "mocha --recursive test/*",
+    "lint": "eslint ."
   },
   "author": "Markus Dobmann <markus.dobmann@peerigon.com>",
   "license": "MIT",
@@ -26,6 +30,8 @@
   },
   "devDependencies": {
     "chai": "^3.0.0",
+    "eslint": "^1.10.3",
+    "eslint-config-peerigon": "^0.1.1",
     "mocha": "^2.2.5"
   }
 }
