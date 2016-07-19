@@ -3,7 +3,7 @@ parses xml using [sax.js](https://github.com/isaacs/sax-js).
 
 [![Build Status](https://travis-ci.org/flootr/peew.svg?branch=master)](https://travis-ci.org/flootr/peew) [![Dependency Status](https://david-dm.org/flootr/peew.svg)](https://david-dm.org/flootr/peew) [![devDependency Status](https://david-dm.org/flootr/peew/dev-status.svg)](https://david-dm.org/flootr/peew#info=devDependencies)
 
-**Note:** This project is under active development. API may change. Requires minimum Node.js version 4.2.1.
+**Note:** This project is **not** under active development. Currently there are no plans to continue on this project from my side.
 
 ## API
 
